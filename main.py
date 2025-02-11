@@ -1,5 +1,6 @@
 import asyncio
 import uvloop
+from loguru import logger
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -19,7 +20,7 @@ async def main():
         )
 
     except Exception as e:
-        print(f"Critical exception occured: {e}")
+        logger.error(f"Critical exception occured: {e}")
         # TODO: Add shutdown sequence here
         raise e
 
